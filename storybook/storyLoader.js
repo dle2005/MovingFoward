@@ -1,9 +1,9 @@
 function loadStories() {
-  require('../App/stories/Test.stories');
+  require('../App/stories/Button.stories');
 }
 
 const stories = [
-  '../App/stories/Test.stories'
+  '../App/stories/Button.stories'
 ];
 
 module.exports = {
