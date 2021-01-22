@@ -13,6 +13,7 @@
     "prestorybook": "rnstl"
   },
   "dependencies": {
+    "@react-navigation/native": "^5.9.1",
     "react": "16.13.1",
     "react-native": "0.63.3",
     "react-native-storybook-loader": "^2.0.2"
