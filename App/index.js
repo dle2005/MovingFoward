@@ -1,28 +1,26 @@
-export { default } from '../storybook'
+// export { default } from '../storybook'
 
-// import React from 'react';
-// import { StyleSheet, Text, View } from 'react-native';
-// import AppButton from './components/Button/AppButton';
+import { NavigationContainer } from '@react-navigation/native';
+import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
+import React from 'react';
+import Main from './screens/Main';
 
-// const App = () => {
 
-//     return(
-//         <View style={styles.container}>
-//             <AppButton>
-//                 <Text>
-//                     hello world
-//                 </Text>
-//             </AppButton>
-//         </View>
-//     )
-// }
+const Stack = createStackNavigator();
 
-// const styles = StyleSheet.create({
-//     container: {
-//         flex: 1,
-//         alignItems: 'center',
-//         justifyContent: 'center'
-//     }
-// })
+const App = () => {
+    return(
+        <NavigationContainer>
+            <Stack.Navigator
+                screenOptions={{
+                    headerShown: false,
+                    CardStyleInterpolators: CardStyleInterpolators.forHorizontalIOS
+                }}
+            >
+                <Stack.Screen name="Main" component={Main}/>
+            </Stack.Navigator>
+        </NavigationContainer>
+    )
+}
 
-// export default App;
+export default App;
