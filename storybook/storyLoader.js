@@ -1,10 +1,12 @@
 function loadStories() {
+  require('../App/stories/Text.stories');
   require('../App/stories/Button.stories');
   require('../App/stories/TextInput.stories');
   require('../App/stories/API.stories');
 }
 
 const stories = [
+  '../App/stories/Text.stories',
   '../App/stories/Button.stories',
   '../App/stories/TextInput.stories',
   '../App/stories/API.stories'
