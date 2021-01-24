@@ -18,7 +18,7 @@ const AppText = ({
         <Text
             style={{
                 ...styles.default,
-                style,
+                ...style,
             }}
             {...props}
         >
@@ -29,7 +29,7 @@ const AppText = ({
 
 const styles = StyleSheet.create({
     default: {
-        fontSize: 10,
+        fontSize: 12,
     }
 })
 

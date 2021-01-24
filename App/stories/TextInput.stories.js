@@ -8,6 +8,7 @@ storiesOf('TextInput', module)
     .addDecorator(BufferView)
     .add('default', () => (
         <AppTextInput
+            title="이름"
             placeholder="Insert..."
         />
     ));

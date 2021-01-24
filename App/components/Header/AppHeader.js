@@ -1,28 +1,29 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { height } from '../../config/globalStyles';
 
 const AppHeader = ({
     title,
     titlePress,
+    noIcon,
     rightIcon,
     rightIconPress,
     leftIcon,
     leftIconPress,
 }) => {
 
-    return(
+    return (
         <View style={styles.container}>
-            {leftIcon && (
+            {leftIcon &&
                 <TouchableOpacity
                     style={styles.leftIcon}
                     onPress={leftIconPress}
                 >
                     {leftIcon}
                 </TouchableOpacity>
-            )}
-            <View style={styles.titleContainer}>
+
+            }
+            <View style={[styles.titleContainer, noIcon ? {} : { alignSelf: 'center' }]}>
                 <TouchableOpacity
                     onPress={titlePress}
                     disabled={titlePress ? false : true}
@@ -30,14 +31,14 @@ const AppHeader = ({
                     <Text style={{ textAlign: 'center' }}> {title} </Text>
                 </TouchableOpacity>
             </View>
-            {rightIcon && (
+            {rightIcon &&
                 <TouchableOpacity
                     style={styles.rightIcon}
                     onPress={rightIconPress}
                 >
                     {rightIcon}
                 </TouchableOpacity>
-            )}
+            }
         </View>
     )
 }
@@ -53,18 +54,14 @@ const styles = StyleSheet.create({
     },
     leftIcon: {
         position: 'absolute',
-        top: 1,
-        bottom: 1,
-        left: 1, 
-        right: 1,
+        top: 10,
+        left: 5,
         justifyContent: 'center'
     },
     rightIcon: {
         position: 'absolute',
-        top: 1,
-        bottom: 1,
-        left: 1, 
-        right: 1,
+        bottom: 10,
+        right: 5,
         justifyContent: 'center'
     }
 })
