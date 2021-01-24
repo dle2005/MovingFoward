@@ -20,11 +20,11 @@ export const screenStyle = {
     marginVertical: height * 10
 };
 
-// export const fonts = {
-//     NotoSansKR_Black: 'NotoSansKR-Black',
-//     NotoSansKR_Bold: 'NotoSansKR-Bold',
-//     NotoSansKR_Light: 'NotoSansKR-Light',
-//     NotoSansKR_Medium: 'NotoSansKR-Medium',
-//     NotoSansKR_Regular: 'NotoSansKR-Regular',
-//     NotoSansKR_Thin: 'NotoSansKR-Thin',
-// };
+export const fonts = {
+    NotoSansKR_Black: 'NotoSansKR-Black',
+    NotoSansKR_Bold: 'NotoSansKR-Bold',
+    NotoSansKR_Light: 'NotoSansKR-Light',
+    NotoSansKR_Medium: 'NotoSansKR-Medium',
+    NotoSansKR_Regular: 'NotoSansKR-Regular',
+    NotoSansKR_Thin: 'NotoSansKR-Thin',
+};
