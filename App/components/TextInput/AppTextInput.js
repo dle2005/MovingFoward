@@ -6,6 +6,7 @@ const AppTextInput = ({
     style,
     title,
     subTitle,
+    subTitleStyle,
     onChangeText,
     ...props
 }) => {
@@ -17,7 +18,7 @@ const AppTextInput = ({
                     <AppText style={{ marginBottom: 10 }}>
                         {title}
                     </AppText>
-                    <AppText>
+                    <AppText style={{...styles.subTitle, ...subTitleStyle}}>
                         {subTitle}
                     </AppText>
                 </View>
@@ -34,6 +35,9 @@ const styles = StyleSheet.create({
     textContainer: {
         flexDirection: 'row'
     },  
+    subTitle: {
+      color: 'lightgrey'  
+    },
     textInput: {
         width: '100%',
         height: 50,
