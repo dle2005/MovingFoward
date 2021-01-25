@@ -20,13 +20,6 @@ const StopWatch = () => {
     }
   }
 
-  // const handleResume = () => {
-  //   setIsPaused(true)
-  //   increment.current = setInterval(() => {
-  //     setTimer((timer) => timer + 1)
-  //   }, 1000)
-  // }
-
   const handleReset = () => {
     clearInterval(increment.current)
     setIsActive(false)
