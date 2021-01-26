@@ -11,7 +11,8 @@ const StopWatch = () => {
 
   const handleStart = () => {
     setIsActive(!isActive)
-    {!isActive ? 
+    {
+      !isActive ?
       (increment.current = setInterval(() => {
         setTimer((timer) => timer + 1)
       }, 10))
@@ -41,10 +42,10 @@ const StopWatch = () => {
         {formatTime()}
       </AppText>
       <TouchableOpacity onPress={handleStart}>
-        <Text> ICON </Text>
+        <Text style={{ fontSize: 30 }}>{!isActive ? "Start" : "Stop"}</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={handleReset}>
-        <Text> RESET </Text>
+        <Text style={{ fontSize: 30 }}>Reset</Text>
       </TouchableOpacity>
     </View>
   )
