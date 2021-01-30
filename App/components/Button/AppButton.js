@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, TouchableOpacity,  Platform } from 'react-native';
 
 const AppButton = ({
     style,
@@ -25,10 +25,25 @@ const styles = StyleSheet.create({
         height: 50,
         alignItems: 'center',
         justifyContent: 'center',
-        borderWidth: 1,
+        borderWidth: 2,
         borderRadius: 5,
-        borderColor: 'grey'
-    }
+        backgroundColor: 'grey',
+        ...Platform.select({
+            ios: {
+              shadowColor: 'black',
+              shadowOffset: {
+                width: 0,
+                height: 10,
+              },
+              shadowOpacity: 0.25,
+              shadowRadius: 3.3,
+            },
+            android: {
+              elevation: 10,
+            },
+          }),
+          borderRadius: 10,
+        },
 })
 
 export default AppButton;
