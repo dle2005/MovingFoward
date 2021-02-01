@@ -1,14 +1,16 @@
 import React from 'react';
-import { View, StyleSheet, Text, Button } from 'react-native';
+import { View, StyleSheet, ImageBackground } from 'react-native';
+
+const image = { uri: 'https://reactjs.org/logo-og.png' };
 
 const Main = ({ navigation }) => {
 
     return(
         <View style={styles.container}>
-            <Text> Main Screen </Text>
-            <Button 
-                title={"Go to Login Screen"}
-                onPress={() => {navigation.navigate('Login')}}
+            <ImageBackground
+                source={image}
+                style={{width: 300, height: 200}}
+                imageStyle={{borderRadius: 15}}
             />
         </View>
     )

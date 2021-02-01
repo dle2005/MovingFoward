@@ -1,30 +1,29 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
-import { screenStyle } from '../config/globalStyles';
-import AppHeader from '../components/Header/AppHeader'
-import Icon from 'react-native-vector-icons/AntDesign';
+import { View, StyleSheet, Text, Keyboard } from 'react-native';
+import { height, width } from '../config/globalStyles';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import AppTextInput from '../components/TextInput/AppTextInput';
 
 const Login = ({ navigation }) => {
 
     return (
-        <View style={screenStyle}>
-            <AppHeader
-                title="회원가입"
-                noIcon={false}
-                leftIcon={<Icon name="left" size={20} />}
-                leftIconPress={() => navigation.goBack()}
-            />
-            <View>
-                
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+            <View style={styles.container}>
+                <AppTextInput
+                    title='이름'
+                />
             </View>
-        </View>
+        </TouchableWithoutFeedback>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-    }
+        height: height * 690,
+        paddingHorizontal: width * 16,
+        justifyContent: 'center',
+        alignContent: 'center'
+    },
 })
 
 export default Login;
