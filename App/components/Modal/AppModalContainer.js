@@ -1,16 +1,19 @@
 import React from 'react';
 import { Modal, SafeAreaView, StyleSheet } from 'react-native';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 const AppModalContainer = ({
+    visible,
     children,
 }) => {
 
     return (
         <Modal
+            visible={visible}
             animationType="fade"
         >
             <SafeAreaView style={styles.container}>
-                {children}
+                    {children}
             </SafeAreaView>
         </Modal>
     )
