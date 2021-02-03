@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { PermissionsAndroid, Platform, StyleSheet, Text, View } from 'react-native';
 import Geolocation from '@react-native-community/geolocation';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
@@ -8,6 +8,15 @@ const GeoLocationAPI = ({
 }) => {
     const [latitude, setLatitude] = useState(null);
     const [longitude, setLogitude] = useState(null);
+
+    const granted = await PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION);
+
+    if (granted) {
+        console.log("You can use the ACCESS_FINE_LOCATION")
+    }
+    else {
+        console.log("ACCESS_FINE_LOCATION permission denied")
+    }
 
     const geoLocation = () => {
         Geolocation.getCurrentPosition(
@@ -19,7 +28,7 @@ const GeoLocationAPI = ({
                 setLogitude(longitude);
             },
             error => { console.log(error.code, error.message); },
-            {enableHighAccuracy:true, timeout: 15000, maximumAge: 10000 },
+            { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 },
         )
     }
 
