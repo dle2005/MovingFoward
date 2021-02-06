@@ -6,6 +6,7 @@ function loadStories() {
   require('../App/stories/Recorder.stories');
   require('../App/stories/Text.stories');
   require('../App/stories/TextInput.stories');
+  require('../App/stories/ETC.stories');
 }
 
 const stories = [
@@ -16,6 +17,7 @@ const stories = [
   '../App/stories/Recorder.stories',
   '../App/stories/Text.stories',
   '../App/stories/TextInput.stories',
+  '../App/stories/ETC.stories',
 ];
 
 module.exports = {
